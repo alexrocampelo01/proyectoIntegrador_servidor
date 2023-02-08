@@ -4,6 +4,8 @@ require_once('../../vendor/autoload.php');
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 $key = 'ejemplo';
+$jwt = "";
+$payLoad = "";
 // $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
  require_once('conet.php');
  $con = new Conexion();
@@ -48,18 +50,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             // echo "<p>$sql</p>
         }
         $result = $con->query($sql);
+        if($result->num_rows == 0 ){
+            header("HTTP/1.1 406 Not Acceptable");
+        }else{
         $usuario = $result->fetch_all(MYSQLI_ASSOC);
         //creamos el webToken y lo añadimos al usario
         $payLoad = [
             'nomUsu' => $usuario[0]['nomUsu'],
         ];
         $jwt = JWT::encode($payLoad, $key, 'HS256');
-        // echo json_encode($jwt);
-        // print_r($jwt);
         $usuario['webToken'] = $jwt;
         header("HTTP/1.1 200 OK");
         echo json_encode($usuario);
-
+        }
     } catch (mysqli_sql_exception $e) {
         header("HTTP/1.1 404 Not Found");
     }
@@ -69,7 +72,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
    $json = file_get_contents('php://input');
    if(isset($json)){
     $user = json_decode($json);
-    
    //creamos las variables de los datos de los usarios
     $nombre = $user->nombre;
     $apellidos = $user->apellidos;
@@ -98,7 +100,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
         
         
-    }catch(mysqli_sql_exception){
+    }catch(mysqli_sql_exception $e){
         header("HTTP/1.1 400 Bad Request");
     }
   }else {
@@ -109,17 +111,38 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(isset($json)){
         $cambios = json_decode($json);
         print_r($cambios);
-    $wt = $cambios->wt;
+    $jwt = $cambios->wt;
     $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
     print_r($decoded);
+    $nomUsu = $cambios->nomUsu;
+    // if($decoded == $nomUsu){
+    //     echo"web token valido";
+    // }else{
+    //     echo"no valido";
+    // }
+    $id = $cambios->id;
+    $nom = $cambios->nom;
+    $apel = $cambios->apel;
     $correo = $cambios->correo;
-    $pass = $cambios->pass;
     $altura = $cambios->altura;
     $peso = $cambios->peso;
     $fechNac = $cambios->fechNac;
+    $tlf = $cambios-> tlf;
     // $listaActividades = $cambios->listaActividades;
-}else{
-    echo "esto no es un metodo registrado";
-}
+    try{
+        $sql = "UPDATE `usuario` SET `nombre` = '$nom', `apellido` = '$apel', `correo` = '$correo',
+            `altura` = '$altura', `peso` = '$peso', `fechNac` = '$fechNac', `listaActividades` = 'ALGO',
+            `tlf` = '$tlf' WHERE `usuario`.`id` = $id";
+        $con->query($sql);
+        header("HTTP/1.1 200 OK");
+        echo json_encode($con->insert_id);
+    }catch(mysqli_sql_exception $e){
+        header("HTTP/1.1 400 Bad Request");
+    }
+    
+    }else{
+        echo "esto no es un metodo registrado";
+    }
+    exit;
 } 
 ?>

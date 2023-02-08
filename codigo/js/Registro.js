@@ -30,7 +30,7 @@ function listaActividades(){
 let datosUsu ={};
 function recoger(){
     
-    if(comprovarErrores() == false){
+    if(comprovarErrores()){
         console.log('erores');
         console.log(listaActividades());
         
@@ -89,7 +89,6 @@ function recoger(){
 //===========================================================
 
 let divErrores = document.querySelector('#errores');
-
 function comprovarErrores(){
     let error = false;
     let msg = [];
