@@ -1,0 +1,91 @@
+#fotoUsu{
+    width:  20vw;
+    height: 20vw;
+    background-color: #A7C957;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-left: 3vw;
+    cursor: pointer;
+    color: white
+}
+#fotoUsu a{
+    color: rgba(0, 0, 0, 0.85);
+    /* background-color: #A7C957; */
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 15vw;
+    line-height: 20vw;
+    padding: 3vw;
+    
+}
+#logUsuBody{
+    color: black;
+    font-size: 1.5vw;
+    font-family: 'Jost', sans-serif;
+}
+#cuerpo{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2vh;
+}
+.cambiar{
+    display: none;
+}
+form{
+    margin-top:3vw;
+}
+input{
+    line-height: 20px;
+    width: 20vw;
+    height: 6vh;
+    border: white 2px solid;
+    background-color: #CDE47E ;
+    margin: 10px;
+    color: black;
+    margin-left: 0.5px;
+    font-size: 15px;
+    border-radius: 2vw;
+    font-family: 'Jost', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+}
+label {
+    color: black;
+    font-size: 20px;
+    font-family: 'Jost', sans-serif;
+}
+#errores{
+    background-color: red;
+    color: white;
+}
+.actividades span{
+    background-color: #CDE47E;
+    width: 10vw;
+    padding: 0.5vw;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+.actividad{
+    margin-top: 1vw;
+}
+#guardarCambios{
+    background-color: #CDE47E;
+    padding: 0.5vw;
+    border-radius: 2vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin-top: 1vw;
+}
+#Eliminar{
+    background-color: #CDE47E;
+    padding: 0.5vw;
+    border-radius: 2vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin-top: 1vw;
+}

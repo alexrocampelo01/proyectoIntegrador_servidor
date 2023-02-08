@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/cabecera.css">
+    <link rel="stylesheet" href="../estilos/datosUsu.css">
+    <link rel="stylesheet" href="../estilos/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Jost:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Datos Usuario</title>
+</head>
+
+<body>
+    <div id="cabecera">
+    </div>
+    <div id="cuerpo">
+        <div id="fotoUsu">
+            <a href="datosPersonales.html"><i class="bi bi-person-fill"></i></a>
+            <p id="logUsuBody">alex</p>
+        </div>
+        <form>
+            <div class="correo">
+                <label>Correo electrónico</label><br>
+                <input type="text" id="correo" >
+            </div>
+            <div class="altura">
+                <label>Estatura</label><br>
+                <input type="text" id="altura">
+            </div>
+            <div class="peso">
+                <label>Peso</label><br>
+                <input type="text" id="peso">
+            </div>
+            <div class="fechNac">
+                <label>Fecha de nacimiento</label><br>
+                <input type="date" id="fechNac">
+            </div>
+            <div class="tlf">
+                <label>Telefono</label><br>
+                <input type="text" id="tlf">
+            </div>
+            <div class="actividades">
+                <label>Actividades favoritas</label>
+                <div class="actividad">
+                    <span>senderismo</span>
+                    <span>Alpinismo</span>
+                    <span>ruta forestal</span>
+                    <span>Pozas</span>
+                </div>
+            </div>
+        </form>
+        <span id="guardarCambios">Guardar Cambios</span>
+        <span id="Eliminar">Eliminar Cuenta</span>
+    </div>
+    <div id="errores">
+
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="pie">
+    </div>
+</body>
+<script src="../js/cargadorComponetes.js"></script>
+<script src="../js/DatosUsu.js"></script>
+
+</html>

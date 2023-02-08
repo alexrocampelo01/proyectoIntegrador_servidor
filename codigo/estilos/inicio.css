@@ -1,0 +1,99 @@
+* {
+    margin: 0px;
+}
+
+
+
+.mitadIzq {
+    /* border: solid red 5px; */
+    width: 50%;
+    background-image: url('../images/logoPureAir.png');
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+}
+
+.mitadDer {
+    width: 50%;
+    position: relative;
+    float: left;
+    height: 90vh;
+    background-color: white ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.mitadDer form {
+    /* background-color: aquamarine; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 45vw;
+    height: 20vw;
+    flex-direction: column;
+
+
+}
+form .credenciales{
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form div {
+    text-align: center;
+}
+
+.mitadDer input {
+    line-height: 20px;
+    width: 20vw;
+    height: 6vh;
+    border: white 2px solid;
+    background-color: #CDE47E ;
+    margin: 10px;
+    color: black;
+    margin-left: 10px;
+    font-size: 15px;
+    border-radius: 2vw;
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    
+}
+
+label {
+    color: black;
+    font-size: 20px;
+    font-family: 'Jost', sans-serif;
+}
+
+#errores {
+    background-color: rgba(255, 0, 0, 0.502);
+    width: auto;
+    color: white;
+}
+#inicioBut{
+    background-color: #CDE47E;
+    width: 10vw;
+    border-radius: 2vw;
+    height:25px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+
+    
+}
+#inicioBut a{
+    color: black;
+    font-family: 'Jost', sans-serif;
+}

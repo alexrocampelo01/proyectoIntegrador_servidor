@@ -1,0 +1,131 @@
+*{
+margin: 0px;
+}
+#registro{
+    background-color: peru;
+    height: auto;
+}
+.mitadIzq{
+    border: solid red 5px;
+    width: 50%;
+    background-image: url('../images/logoPureAir.png');
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+
+}
+.mitadDer{
+width: 50%;
+position: relative;
+float: left;
+height: 90vh;
+background-color:#A7C957;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+}
+.mitadDer form{
+    background-color: aquamarine;
+   box-sizing: border-box;  
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows:repeat(6, 1fr);
+   width: 45vw;   
+}
+form div{
+    text-align: center;
+}
+.nom{
+    grid-column: 1 ;
+    grid-row: 1;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.apel{
+    grid-column: 2;
+    grid-row: 1;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.nomUsu{
+    grid-column:1;
+    grid-row: 2;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.correo{
+    grid-column:2;
+    grid-row: 2;
+    border: red 3px solid;
+    box-sizing: border-box;
+} 
+.pass{
+    grid-column:1;
+    grid-row: 3;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.passRepe{
+    grid-column:2;
+    grid-row: 3;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.altura{
+    grid-column:1;
+    grid-row: 4;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.peso{
+    grid-column:2;
+    grid-row: 4;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.fechNac{
+    grid-column:1;
+    grid-row: 5;
+    border: red 3px solid;
+    box-sizing: border-box;
+} 
+.tlf{
+    grid-column:2;
+    grid-row: 5;
+    border: red 3px solid;
+    box-sizing: border-box;
+} 
+.actividades{
+    grid-column:span 3 ;
+    grid-row: 6;
+    border: red 3px solid;
+    box-sizing: border-box;
+}
+.mitadDer input{
+    line-height: 20px;
+    text-align: center;
+    width: 10vw;
+    height: 4vh;
+    border: white 2px solid;
+    /* background-color: ; */
+    margin: 10px;
+}
+label{
+ /* background-color: aqua; */
+ color: black;
+}
+#errores{
+    background-color: red;
+    color: white;
+}
+.mitadDer span{
+    width: 20vw;
+    background-color: orange;
+    border-radius: 25%, 25%, 25%, 25%;
+}

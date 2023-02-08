@@ -1,0 +1,174 @@
+*{
+margin: 0px;
+}
+body{
+    background-color: black;
+}
+#registro{
+    /* border: fuchsia 5px solid; */
+    height: fit-content;
+}
+/* .mitadIzq{
+    background-color: black;
+    border: yellow 5px solid;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    width: 50%;
+} */
+
+/* .mitadIzq img{
+    background-image: url('../images/logoPureAir.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+
+} */
+.prueba{
+    position: relative;
+    float: left;
+    margin-top: 1%;
+    height: 50%;
+    width: 50%;
+}
+.mitadDer{
+    width: 50%;
+    position: relative;
+    float: left;
+    height: auto;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: solid 5px purple; */
+    box-sizing: border-box;
+
+}
+.mitadDer form{
+    
+    /* background-color: aquamarine; */
+    box-sizing: border-box;  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:repeat(6, 1fr);
+    width: 45vw;  
+    height: auto;
+    margin-top: 3vw;
+}
+form div{
+    text-align: center;
+}
+.nom{
+    grid-column: 1 ;
+    grid-row: 1;
+     
+    box-sizing: border-box;
+}
+.apel{
+    grid-column: 2;
+    grid-row: 1;
+    box-sizing: border-box;
+}
+.nomUsu{
+    grid-column:1;
+    grid-row: 2;
+    box-sizing: border-box;
+}
+.correo{
+    grid-column:2;
+    grid-row: 2;
+    box-sizing: border-box;
+} 
+.pass{
+    grid-column:1;
+    grid-row: 3;
+    box-sizing: border-box;
+}
+.passRepe{
+    grid-column:2;
+    grid-row: 3;
+    box-sizing: border-box;
+}
+.altura{
+    grid-column:1;
+    grid-row: 4;
+    box-sizing: border-box;
+}
+.peso{
+    grid-column:2;
+    grid-row: 4;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.fechNac{
+    grid-column:1;
+    grid-row: 5;     
+    box-sizing: border-box;
+} 
+.tlf{
+    grid-column:2;
+    grid-row: 5;     
+    box-sizing: border-box;
+} 
+.actividades{
+    grid-column:span 3 ;
+    grid-row: 6;     
+    box-sizing: border-box;
+}
+
+.mitadDer input{
+    line-height: 20px;
+    width: 20vw;
+    height: 6vh;
+    /* border: white 2px solid; */
+    background-color: #CDE47E ;
+    margin: 10px;
+    color: black;
+    margin-left: 0.5px;
+    font-size: 15px;
+    border-radius: 2vw;
+    font-family: 'Jost', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+}
+
+label {
+    color: black;
+    font-size: 20px;
+    font-family: 'Jost', sans-serif;
+}
+#errores{
+    background-color: red;
+    color: white;
+}
+.actividades span{
+    background-color: #CDE47E;
+    width: 10vw;
+    padding: 0.5vw;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+.actividad{
+    margin-top: 1vw;
+}
+#butregistro{
+    background-color: #CDE47E;
+    padding: 0.5vw;
+    border-radius: 2vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin-top: 1vw;
+}
+/*estilo actividad*/
+
+.seleccionado{
+    color: red;
+}
+.error{
+    border: red 2px solid !important;
+}
