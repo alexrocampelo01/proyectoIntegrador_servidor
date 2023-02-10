@@ -110,39 +110,68 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $json = file_get_contents('php://input');
     if(isset($json)){
         $cambios = json_decode($json);
-        print_r($cambios);
-    $jwt = $cambios->wt;
-    $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
-    print_r($decoded);
-    $nomUsu = $cambios->nomUsu;
-    // if($decoded == $nomUsu){
-    //     echo"web token valido";
-    // }else{
-    //     echo"no valido";
-    // }
-    $id = $cambios->id;
-    $nom = $cambios->nom;
-    $apel = $cambios->apel;
-    $correo = $cambios->correo;
-    $altura = $cambios->altura;
-    $peso = $cambios->peso;
-    $fechNac = $cambios->fechNac;
-    $tlf = $cambios-> tlf;
-    // $listaActividades = $cambios->listaActividades;
-    try{
-        $sql = "UPDATE `usuario` SET `nombre` = '$nom', `apellido` = '$apel', `correo` = '$correo',
-            `altura` = '$altura', `peso` = '$peso', `fechNac` = '$fechNac', `listaActividades` = 'ALGO',
-            `tlf` = '$tlf' WHERE `usuario`.`id` = $id";
-        $con->query($sql);
-        header("HTTP/1.1 200 OK");
-        echo json_encode($con->insert_id);
-    }catch(mysqli_sql_exception $e){
-        header("HTTP/1.1 400 Bad Request");
-    }
-    
+        // print_r($cambios);
+        $jwt = $cambios->wt;
+        $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
+        // print_r($decoded);
+        // print_r($cambios->nomUsu);
+        $nomUsu = $cambios->nomUsu;
+        if($decoded->nomUsu == $nomUsu){ //si el nombre de usario u el del web token coinciden mismo usuario
+            $id = $cambios->id;
+            $nom = $cambios->nom;
+            $apel = $cambios->apel;
+            $correo = $cambios->correo;
+            $altura = $cambios->altura;
+            $peso = $cambios->peso;
+            $fechNac = $cambios->fechNac;
+            $tlf = $cambios-> tlf;
+            // $listaActividades = $cambios->listaActividades;
+            try{
+                $sql = "UPDATE `usuario` SET `nombre` = '$nom', `apellido` = '$apel', `correo` = '$correo',
+                    `altura` = '$altura', `peso` = '$peso', `fechNac` = '$fechNac', `listaActividades` = 'ALGO',
+                    `tlf` = '$tlf' WHERE `usuario`.`id` = $id";
+                $con->query($sql);
+                header("HTTP/1.1 200 OK");
+                echo json_encode($con->insert_id);
+            }catch(mysqli_sql_exception $e){
+                header("HTTP/1.1 400 Bad Request");
+            }
+        }else{
+            header("HTTP/1.1 401: No autorizado");
+        }
     }else{
-        echo "esto no es un metodo registrado";
+        header("HTTP/1.1 404: No encontrado");
     }
     exit;
 } 
+if($_SERVER['REQUEST_METHOD'] == 'DELETE'){
+    $json = file_get_contents('php://input');
+    if(isset($json)){
+        $eliminado = json_decode($json);
+        $jwt = $eliminado->wt;
+        if($jwt){
+            $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
+            $nomUsu = $eliminado->nomUsu;
+            if($decoded->nomUsu == $nomUsu){
+                print_r("autorizado");
+                $id = $eliminado->id;
+                $sql ="DELETE FROM usuario WHERE usuario.id = $id";
+                try {
+                    $con->query($sql);
+                    header("HTTP/1.1 200 OK");
+                    echo json_encode($id);
+                } catch (mysqli_sql_exception $e) {
+                    header("HTTP/1.1 400 Bad Request");
+                }
+            }else{
+                header("HTTP/1.1 401: No autorizado");
+            }
+        }else{
+            header("HTTP/1.1 404: No encontrado");
+        }
+    }else{
+        header("HTTP/1.1 404: No encontrado");
+    }
+    exit;
+}
 ?>

@@ -1,6 +1,7 @@
-
 cargarForm();
 let stringActividades = "";
+let divErrores = document.querySelector('#errores');
+
 function cargarForm(){
     let logUsu = document.querySelector('#logUsuBody');
     logUsu.textContent = localStorage.getItem('nomUsu');
@@ -49,11 +50,66 @@ function cambiar(){
                 'Content-Type': 'application/json;charset=utf-8'
                 },
             body: JSON.stringify(cambios),
-        }).then(response => response.text())
+        }).then(response =>{
+            switch(response.status){
+                case 200:
+                    return response.text();
+                case 400:
+                    divErrores.textContent = "Operacion no posible intentelo mas tarde";
+                    break;
+                case 401:
+                    divErrores.textContent = "no aoutorizado";
+                    break;
+                case 404:
+                    divErrores.textContent = "respuesta incompleta";
+                    break;
+            }
+        })
         .then((data) =>{
             console.log("algo //"+data);
+            divErrores.textContent = "modificado corretamente";
+            location.href="Principal.html";
         })
     }
+}
+//===========================================================
+//eliminar usuario
+//===========================================================
+let eliminado ={};
+let butEliminar = document.querySelector('#Eliminar');
+butEliminar.addEventListener('click',eliminarUsu);
+function eliminarUsu(){
+    console.log("eliminar");
+    eliminado.id = localStorage.getItem('id');
+    eliminado.nomUsu = localStorage.getItem('nomUsu');
+    eliminado.wt = localStorage.getItem('webToken');
+    fetch("http://localhost/proyectoIntegrador/ProyectoSegundoTri/codigo/API/",{
+    method:'DELETE',
+    headers:{
+        'Content-Type': 'application/json;charset=utf-8'
+    },
+    body:JSON.stringify(eliminado),
+    })
+    .then(response =>{
+        switch(response.status){
+            case 200:
+                divErrores = "eliminado con exito";
+                cerrarSesion();
+                cambiosSesion();
+                return response.text();
+            case 404:
+                divErrores = "no encontado usario";
+                break;
+            case 401:
+                divErrores = "no autorizado";
+                break;
+            default:
+                console.log("ningun caso anterior");
+        }
+    })
+    .then(data => {
+        console.log("eliminado usario id=" + data);
+    })
 }
 //===========================================================
 //lista actividades funcionamiento
@@ -77,7 +133,7 @@ function listaActividades(){
 //===========================================================
 //comprobaciones del formulario
 //===========================================================
-let divErrores = document.querySelector('#errores');
+
 function comprovarErrores(){
     let error = false;
     let msg = [];
