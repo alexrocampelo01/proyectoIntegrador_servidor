@@ -106,7 +106,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   }else {
     header("HTTP/1.1 400 Bad Request");
  }
-}if($_SERVER['REQUEST_METHOD'] == 'PUT'){
+}
+if($_SERVER['REQUEST_METHOD'] == 'PUT'){
     $json = file_get_contents('php://input');
     if(isset($json)){
         $cambios = json_decode($json);

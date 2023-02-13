@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    <link rel="stylesheet" href="../estilos/cabecera.css">
+    <link rel="stylesheet" href="../estilos/buscarRutas.css">
+    <link rel="stylesheet" href="../estilos/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="cabecera">
+    </div>
+    <div id="mapa">
+        
+    </div>
+    <div id="otros">
+        <div class="VistaMiniRuta">
+            <h3 class="nomRuta">ruta de la cabra coja</h3>
+            <div class="dosMitades">
+                <div class="mitadIzq">
+                    <img  src="../images/fotoLagunaInvierno.jpg" alt="fondo">
+                </div>
+                <div class="mitadDer">
+                    <div class="minidatos">
+                        <div class="titulos">
+                            <span class="distancia">Distancia:</span><br>
+                            <span class="dificultad">Dificultad:</span><br>
+                            <span class="desnivel">Desnivel:</span><br>
+                            <span class="tipoRuta">Tipo de ruta:</span><br>
+                        </div>
+                        <div class="datos">
+                            <span class="distanciaDato">14KM</span><br>
+                            <span class="dificultadDato">Media</span><br>
+                            <span class="desnivelDato">600M</span><br>
+                            <span class="tipoRutaDato">Senderismo</span><br>
+                        </div>
+                        <div class="valoracion">
+                            <span>Valoracion</span>
+                            <div class="estrellas">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div> 
+    </div>
+    <form id="formuRuta">
+        <input type="file" id="rutaFich">
+        <input type="submit" id="subir">
+        <div id="debug">
+
+        </div>
+    </form>
+    <div id="pie">
+    </div>
 </body>
+<script src="../js/GPXParser.js"></script> 
+<script src="../js/cargadorComponetes.js"></script>
+<script src="../js/buscarRuta.js"></script>
 </html>
