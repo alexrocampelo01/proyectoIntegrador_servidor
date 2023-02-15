@@ -19,6 +19,23 @@
 <body>
     <div id="cabecera">
     </div>
+    <div id="filtros">
+        <form>
+            <div class="filtro">
+                <label>nombre</label><br>
+                <input type="text" id="filtroNom">
+            </div>
+            <div class="filtro">
+                <label>dificultad</label><br>
+                <input type="text" id="filtroDif">
+            </div>
+            <div class="filtro">
+                <label>distancia</label><br>
+                <input type="text" id="filtroDist">
+            </div>
+        </form>
+        <span id="filtrar">Filtrar</span>
+    </div>
     <div id="mapa">
         
     </div>
@@ -58,17 +75,9 @@
             </div>
         </div> 
     </div>
-    <form id="formuRuta">
-        <input type="file" id="rutaFich">
-        <input type="submit" id="subir">
-        <div id="debug">
-
-        </div>
-    </form>
     <div id="pie">
     </div>
 </body>
-<script src="../js/GPXParser.js"></script> 
 <script src="../js/cargadorComponetes.js"></script>
 <script src="../js/buscarRuta.js"></script>
 </html>

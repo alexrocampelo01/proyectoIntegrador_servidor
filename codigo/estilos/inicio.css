@@ -57,7 +57,7 @@ form div {
     line-height: 20px;
     width: 20vw;
     height: 6vh;
-    border: white 2px solid;
+    /* border: white 2px solid; */
     background-color: #CDE47E ;
     margin: 10px;
     color: black;

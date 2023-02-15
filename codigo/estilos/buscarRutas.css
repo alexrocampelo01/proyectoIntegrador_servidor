@@ -11,12 +11,42 @@
     position: relative;
     overflow-y: scroll;
 }
+#filtros {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: blueviolet;
+    text-align: center;
+    padding: 10px;
+    
+}
+#filtros input{
+        line-height: 20px;
+        width: 20vw;
+        height: 6vh;
+        /* border: white 2px solid; */
+        background-color: #CDE47E ;
+        margin: 10px;
+        color: black;
+        margin-left: 0.5px;
+        font-size: 15px;
+        border-radius: 2vw;
+        font-family: 'Jost', sans-serif;
+        font-size: 1vw;
+        text-align: center;
+}
+.filtro{
+/* mini rutas*/
+display: inline-block;
+}
+#filtrar{
+    background-color: #CDE47E;
+}
 .VistaMiniRuta{
     background-color:#F3FFA5;
     float: left;
     width: 535px;
     height: 205px;
-    margin: 50px;
+    margin: 10px 120px 10px 120px ;
     border-radius: 2vw;
     
     /* padding: 0.5vw; */
@@ -84,7 +114,7 @@
     justify-content: center;
     /* background-color: rebeccapurple; */
 }
-.estrellas i{
+.estrellas a{
     width: 25px;
     color: gold;
 }

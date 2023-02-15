@@ -12,8 +12,8 @@ let ruta = {};
             // let geojson = parser.toGeoJSON()
             // console.log(geojson);
             let json = parser.tracks[0];
-            
             console.log(json);
+            //pruebas
            /* console.log(json.points);
             console.log(json.points.length);
             let ultmaPos = json.points.length-1;
@@ -30,18 +30,27 @@ let ruta = {};
             document.querySelector('.dificultadDato').textContent=`${medirDificultad()}`;
             */
             //Datos form
-            ruta.creador = localStorage.getItem('id');
+            ruta.creador = localStorage.getItem('nomUsu');
             ruta.dificultad = document.querySelector('#dif').value;
             ruta.categoria = document.querySelector('#categoria').value;
             ruta.circular = document.querySelector('#circular').value;
             // tremos el json del documento
+            ruta.nombre = json.name;
             ruta.distancia =  Math.round(json.distance.total);
             ruta.desnivel =  Math.round((json.elevation.max) - (json.elevation.min));
             ruta.max =  Math.round((json.elevation.max));
             ruta.min =  Math.round((json.elevation.min));
-            ruta.fechR = json.points[0].time.getDate()+json.points[0].time.getMonth()+json.points[0].time.getYear();
-            ruta.info = json;
-            console.log(JSON.stringify(ruta));
+            let ultmaPos = json.points.length-1;
+            ruta.duracion =  calcularHora(json.points[0].time, json.points[ultmaPos].time);
+            ruta.fechR = formatearFecha(json.points[0].time);
+            let puntos = [];
+            for (let index = 0; index < json.points.length; index++) {
+                pos = [json.points[index].lat, json.points[index].lon];
+                puntos.push(pos);
+            }
+            ruta.info = JSON.stringify(puntos);
+            console.log(json.name);
+            // console.log(JSON.stringify(ruta));
             fetch("http://localhost/proyectoIntegrador/ProyectoSegundoTri/codigo/API/rutas.php", {
                 method:'POST',
                 headers: {
@@ -68,12 +77,21 @@ let ruta = {};
     });
 
 function calcularHora(dateInicio, dateFinal){
-    console.log(dateInicio);
-    console.log(dateFinal);
-    hora = dateInicio.getHours();
-    minutos = dateInicio.getMinutes();
-    return `el tiempo inicio es ${hora} : ${minutos}`;
-
+    // console.log(dateInicio);
+    // console.log(dateFinal);
+    let duracionMilisegundos = (dateFinal-dateInicio);
+    let segundo = parseInt(duracionMilisegundos / 1000);
+    let minutos = parseInt(segundo / 60);
+    let horas = parseInt(minutos / 60);
+    let minDeLaHora = parseInt(minutos % 60);
+    let duracion = (horas+":"+minDeLaHora);
+    return duracion;
+}
+function formatearFecha(fecha){
+    let dia = fecha.getDate();
+    let mes = fecha.getMonth();
+    let año = fecha.getFullYear();
+    return  `${año}-${mes}-${dia}`;
 }
 // function medirDificultad(desnivel, distancia) {
 //     let dificultad = "";

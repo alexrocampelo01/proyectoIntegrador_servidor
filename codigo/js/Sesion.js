@@ -20,7 +20,7 @@ function sesion(){
                 case 200:
                     return response.json();
                 case 404:
-                    document.querySelector('#errores').innerHTML=`intentero en un rato BD`;
+                    document.querySelector('#errores').innerHTML=`intentelo en un rato BD`;
                 case 406:
                     document.querySelector('#errores').innerHTML=`nose encuentra usarios con esas credenciales`;
             }

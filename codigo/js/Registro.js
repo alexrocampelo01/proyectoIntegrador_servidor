@@ -206,7 +206,7 @@ function comprovarErrores(){
         console.log("ok");
         return true; 
     }
-    return false;
+    return error;
 }
 
 
