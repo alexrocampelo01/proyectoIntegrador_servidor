@@ -15,12 +15,13 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
-    <title>Document</title>
+    <title>detalles</title>
 </head>
 <?php
 $URLruta = "http://localhost/proyectoIntegrador/ProyectoSegundoTri/codigo/API/rutas.php?id={$_GET['id']}";
 $rutaJson = file_get_contents($URLruta);
 $ruta = json_decode($rutaJson);
+// print_r($ruta);
 $id = $ruta[0]->id;
 $usuCre = $ruta[0]->creador;
 $nombre = $ruta[0]->nombre;

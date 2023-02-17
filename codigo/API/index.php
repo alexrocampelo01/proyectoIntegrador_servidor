@@ -92,14 +92,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     `correo`, `altura`, `peso`, `fechNac`, `listaActividades`,tlf)
                     VALUES (NULL, '$nombre', '$apellidos', '$nombreUsu', '$passCifrada',
                     '$correo', '$altura', '$peso', '$fechNac', '$listaActividades','$tlf')";
+            // echo "$sql";
             $con->query($sql);
             header("HTTP/1.1 201 Created");
             echo json_encode($con->insert_id);
         } else{
             header("HTTP/1.1 409 Conflict");
         }
-        
-        
     }catch(mysqli_sql_exception $e){
         header("HTTP/1.1 400 Bad Request");
     }
