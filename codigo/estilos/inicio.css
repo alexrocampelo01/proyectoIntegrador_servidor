@@ -51,6 +51,7 @@ form .credenciales{
 }
 form div {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .mitadDer input {
@@ -79,6 +80,7 @@ label {
     background-color: rgba(255, 0, 0, 0.502);
     width: auto;
     color: white;
+    margin: 10px;
 }
 #inicioBut{
     background-color: #CDE47E;
@@ -90,10 +92,25 @@ label {
     font-size: 15px;
     cursor: pointer;
     font-family: 'Jost', sans-serif;
-
-    
+    min-width: 150px;
+    margin-bottom: 10px;
+    padding: 0.5vw;
+    border-radius: 2vw;
+    cursor: pointer;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 #inicioBut a{
     color: black;
     font-family: 'Jost', sans-serif;
+}
+@media(max-width: 800px){
+    .mitadIzq{
+        display: none;
+    }
+    .mitadDer{
+        width: 100%;
+        text-align: center;
+        justify-items: center;
+    }
 }

@@ -1,3 +1,6 @@
+*{
+    font-family: 'Jost', sans-serif;
+}
 #miniCabezera{
     display: flex;
     height: 20vh;

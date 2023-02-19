@@ -160,16 +160,5 @@
     width: 25px;
     color: gold;
 }
-@media(max-width: 600px){
-    .RecomendadosEscrol{
-        flex-direction: column;
-        overflow: scroll;
-    }
-    .RecomendadosEscrol > i{
-        display: none;
-    }
-    .VistaMiniRuta{
-        height: 205px;
-    }
-}
+
 /* FIN grid de los datos*/

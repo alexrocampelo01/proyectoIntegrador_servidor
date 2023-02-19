@@ -1,4 +1,4 @@
-let map = L.map('mapa').setView([42, -5],13);
+let map = L.map('mapa').setView([42, -5],7);
 L.tileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=cde6f14b2bdb463ca3c518a27df81ddc', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.thunderforest.com/terms/">OpenStreetMap</a>'
@@ -42,13 +42,23 @@ function filtrar(){
 
 }
 function generarMiniRuta(data, nom, dif, dist){
+    console.log(data);
     let divRutas = document.querySelector('#otros');
     //generamos las minirutas
     let rutas = data;
 
     if (nom) rutas=rutas.filter( item => item.nombre.toLowerCase().includes(nom.toLowerCase().trim()));
-    
+    if (dif) rutas=rutas.filter( item => item.dificultad.toLowerCase().includes(dif.toLowerCase().trim()));
+    if (dist) rutas=rutas.filter( item => item.distatancia > dist);
 
+    console.log(rutas);
+    if(rutas.length == 0){
+        console.log("no hay rutasssssssss");
+        let parrafoInfo = document.createElement('p');
+        parrafoInfo.innerHTML = "no hay rutas que coincidan con los filtros";
+        console.log(parrafoInfo);
+        divRutas.append(parrafoInfo);
+    }
     // rutas.forEach ( (element, index) => ) //uso de for eche 
     divRutas.innerHTML="";
     for (let i = 0; i < rutas.length; i++) {
@@ -66,13 +76,13 @@ function generarMiniRuta(data, nom, dif, dist){
                                     <span class="distancia">Distancia:</span><br>
                                     <span class="dificultad">Dificultad:</span><br>
                                     <span class="desnivel">Desnivel:</span><br>
-                                    <span class="tipoRuta">Categoria:</span><br>
+                                    <span class="tipoRuta">Duracion:</span><br>
                                 </div>
                                 <div class="datos">
                                     <span class="distanciaDato">${data[i].distatancia}</span><br>
                                     <span class="dificultadDato">${data[i].dificultad}</span><br>
                                     <span class="desnivelDato">${data[i].desnivel}</span><br>
-                                    <span class="tipoRutaDato">${data[i].categoria}</span><br>
+                                    <span class="tipoRutaDato">${data[i].duracion}</span><br>
                                 </div>
                                 <div class="valoracion">
                                     <span>Valoracion</span>

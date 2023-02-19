@@ -1,0 +1,110 @@
+*{
+    font-family: 'Jost', sans-serif;
+}
+.subirRuta{
+ /* background-color: red; */
+ text-align: center; 
+ align-items: center;
+ margin: 5vw 40vw 5vw 40vw;
+ width: 20vw;
+ min-width: 100px;
+ padding: 10px;
+ border-radius: 2vw;
+ background-color: #A7C957;
+ width: 15vw;
+font-family: 'Jost', sans-serif;
+}
+.subirRuta a{
+ /* background-color: red; */
+ align-items: center;
+ text-align: center;
+ color: black;
+ cursor: pointer;
+ padding: 2px;
+
+ /* font-size: 4vw; */
+}
+.rutas{
+    text-align: center;
+    background-color: #F3FFA5;
+    height: fit-content;
+    margin: 30px;
+}
+.rutas a{
+    margin: 0;
+
+    /* margin-bottom: 20px; */
+    color: black;
+}
+.rutas a:visited{
+    color: black;
+}
+.rutas a:active{
+    color: black;
+}
+.rutas a:hover{
+    color: black;
+}
+.rutas h2{
+    background-color: #6A994E;
+    color: white;
+
+}
+.detallesRuta{
+    display: flex;
+    background-color: #F3FFA5;
+    /* margin-bottom: 80px;  */
+    height: fit-content;
+}
+.col1{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+    font-size: 20px;
+    
+}
+.col2{
+    /* background-color: #6cf00c; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+    font-size: 20px;
+}
+.col3{
+    display:grid;
+    grid-template-columns: 2;
+    width: 40%;
+    /* background-color: brown; */
+}
+
+.vertical{
+ display: grid;
+ grid-column: 1;
+ grid-template-rows: 3;
+ width: 30%;
+ height: auto;
+}
+.vertical img{
+    width: 10vw;
+    margin: 8px;
+}
+.f1{
+    grid-row: 1;
+}
+.f2{
+    grid-row: 2;
+}
+.f3{
+    grid-row: 3;
+}
+.grande{
+    grid-column: 2;
+}
+
+/* estilo de mini ruta*/
+

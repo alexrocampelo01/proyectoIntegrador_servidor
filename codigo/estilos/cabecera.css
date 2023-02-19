@@ -1,14 +1,14 @@
 *{
     margin: 0;
 }
-
 /*hader principio*/
 header{
     background-color: black ;
     display: flex;
     align-items: center;
-    padding: 0.5vw;
-    height: auto;
+    padding: 0.2vw;
+    padding-bottom: 0.5vw;
+    height: 220px;
 }
 #logoHeader{
     width: 15vw;

@@ -5,19 +5,28 @@
     position: relative;
 }
 #otros{
-    background-color: aqua;
+    /* background-color: aqua; */
     float: left;
     width: 50%;
     position: relative;
     overflow-y: scroll;
+    height: 600px;
 }
 #filtros {
     display: flex;
     justify-content: space-evenly;
-    background-color: blueviolet;
+    background-color: #6A994E;
     text-align: center;
     padding: 10px;
     
+}
+#filtros label{
+    /* border: white 2px solid; */
+    color: black;
+    font-size: 15px;
+    font-family: 'Jost', sans-serif;
+    font-size: 1vw;
+    text-align: center;
 }
 #filtros input{
         line-height: 20px;
@@ -40,6 +49,18 @@ display: inline-block;
 }
 #filtrar{
     background-color: #CDE47E;
+    width: 60px;
+    font-size: 25px;
+    line-height: 15px;
+    font-family: 'Jost', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+    line-height: 6vh;
+    width: 10vw;
+    height: 6vh;
+    margin: 20px;
+    border-radius: 2vw;
+    cursor: pointer;
 }
 .VistaMiniRuta{
     background-color:#F3FFA5;
@@ -104,8 +125,6 @@ display: inline-block;
     /* background-color: aqua */
 }
 /* COMIENZO grid de los datos*/
-
-
 .estrellas{
     grid-template-columns:repeat(5, 5fr);
     grid-template-rows:repeat(1, 1fr);
@@ -113,8 +132,17 @@ display: inline-block;
     display: flex;
     justify-content: center;
     /* background-color: rebeccapurple; */
+    color: black;
 }
 .estrellas a{
-    width: 25px;
-    color: gold;
+    color: black;
+}
+.estrellas a:hover{
+    color: black;
+}
+.estrellas a:active{
+    color: black;
+}
+.estrellas a:visited{
+    color: black;
 }

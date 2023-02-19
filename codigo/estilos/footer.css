@@ -19,7 +19,7 @@
 #pie h2{
     margin-bottom: 1vw;
 }
-#pie a, a:visited, a:active{
+#pie a,#pie a:visited,#pie a:active{
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: column;
     font-size: 1vw;
-    min-width: 250px;
+    min-width: 230px;
 }
 .aplicacion img{
     width: 10vw;
@@ -51,7 +51,7 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 230px;
     
 }
 .navegacion{
@@ -62,7 +62,7 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 230px;
 }
 .empresa{
     grid-column: 4;
@@ -72,7 +72,7 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 230px;
 }
 .servicios{
     grid-column: 5;
@@ -82,7 +82,7 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 230px;
 }
 .redesSociales{
     grid-column: 6;
@@ -93,7 +93,7 @@
     display: flex;
     flex-direction: column;
     font-size: 3vw;
-    min-width: 250px;
+    min-width: 230px;
 }
 footer{
     color: white;
