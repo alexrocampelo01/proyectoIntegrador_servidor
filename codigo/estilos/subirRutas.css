@@ -1,0 +1,55 @@
+#formuRuta{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+#formuRuta label{
+    /* background-color: aqua; */
+}
+#formuRuta input{
+    /* background-color: aqua; */
+    line-height: 20px;
+    width: 30vw;
+    height: 6vh;
+    /* border: white 2px solid; */
+    background-color: #CDE47E ;
+    margin: 10px;
+    color: black;
+    margin-left: 0.5px;
+    font-size: 25px;
+    border-radius: 2vw;
+    font-family: 'Jost', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+    vertical-align: middle;
+}
+#formuRuta select{
+    /* background-color: aqua; */
+    line-height: 20px;
+    width: 30vw;
+    height: 6vh;
+    /* border: white 2px solid; */
+    background-color: #CDE47E ;
+    margin: 10px;
+    color: black;
+    margin-left: 0.5px;
+    font-size: 25px;
+    border-radius: 2vw;
+    font-family: 'Jost', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+    vertical-align: middle;
+}
+#rutaFich{
+    line-height: 10px;
+    width: 200px;
+}
+select{
+    background-color: #CDE47E ;
+}
+option:hover{
+    background-color: red ;
+}

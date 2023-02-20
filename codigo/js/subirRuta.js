@@ -69,6 +69,7 @@ let ruta = {};
             })
             .then(data => {
                 console.log("algo //"+data);
+                location.href ='../html/misRutas.html';
             })
         }
     reader.readAsText(file);
@@ -93,28 +94,7 @@ function formatearFecha(fecha){
     let año = fecha.getFullYear();
     return  `${año}-${mes}-${dia}`;
 }
-// function medirDificultad(desnivel, distancia) {
-//     let dificultad = "";
-//     if(desnivel < 100 && distancia < 5000){
-//         dificultad = "muy facil";
-//     }else if(desnivel < 100 && distancia < 10000){
-//         dificultad = "facil";
-//     }else if(desnivel < 200 && distancia < 10000){
-//         dificultad = "madia";
-//     }else if(desnivel < 400 && distancia < 10000){
-//         dificultad = "dificil";
-//     }else if(desnivel < 600 && distancia < 20000){
-//         dificultad = "muy dificil";
-//     }else{
-//         dificultad = "algo nose";
-//     }
-//     return dificultad;
-
-// }
-// let butGuardar = document.querySelector('#guardar');
-// butGuardar.addEventListener("click",guardarRuta);
-// function guardarRuta(){
-    
-    
-    
+//berificar errores
+// function comprobarErrores(){
+//     let error = false;
 // }

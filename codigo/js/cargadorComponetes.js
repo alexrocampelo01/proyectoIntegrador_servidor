@@ -23,7 +23,7 @@ function cambiosSesion(){
     if(localStorage.getItem('webToken')){ //significa que ha iniciado sesion
         logUsu.textContent=localStorage.getItem('nomUsu');
         rutasCambiosUsu.href = "datosPersonales.html";
-        
+        document.querySelector('#misRutasCabecera').href = "misRutas.html";
         let butCerrarSesion = document.createElement('span');
         butCerrarSesion.innerHTML =`<a id="cerrarSesion">Cerrar sesion</a>`;
         butCerrarSesion.addEventListener('click',cerrarSesion);
@@ -32,6 +32,7 @@ function cambiosSesion(){
     }else {
         logUsu.textContent=`invitado`;
         rutasCambiosUsu.href = "inicioSesion.html";
+        document.querySelector('#misRutasCabecera').href = "inicioSesion.html";
         divButSesiones.innerHTML=`
         <span><a href="inicioSesion.html">inicio de sesion</a></span>
         <hr>

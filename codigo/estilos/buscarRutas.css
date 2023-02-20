@@ -1,3 +1,6 @@
+*{
+    font-family: 'Jost', sans-serif;
+}
 #mapa{
     width: 50%;
     height: 600px;
@@ -22,26 +25,26 @@
 }
 #filtros label{
     /* border: white 2px solid; */
-    color: black;
+    color: white;
     font-size: 15px;
     font-family: 'Jost', sans-serif;
     font-size: 1vw;
     text-align: center;
 }
 #filtros input{
-        line-height: 20px;
-        width: 20vw;
-        height: 6vh;
-        /* border: white 2px solid; */
-        background-color: #CDE47E ;
-        margin: 10px;
-        color: black;
-        margin-left: 0.5px;
-        font-size: 15px;
-        border-radius: 2vw;
-        font-family: 'Jost', sans-serif;
-        font-size: 1vw;
-        text-align: center;
+    line-height: 20px;
+    width: 20vw;
+    height: 6vh;
+    /* border: white 2px solid; */
+    background-color: #CDE47E ;
+    margin: 10px;
+    color: black;
+    margin-left: 0.5px;
+    font-size: 15px;
+    border-radius: 2vw;
+    font-family: 'Jost', sans-serif;
+    font-size: 1vw;
+    text-align: center;
 }
 .filtro{
 /* mini rutas*/
@@ -61,12 +64,13 @@ display: inline-block;
     margin: 20px;
     border-radius: 2vw;
     cursor: pointer;
+    /* color: white; */
 }
 .VistaMiniRuta{
     background-color:#F3FFA5;
     float: left;
     width: 535px;
-    height: 205px;
+    height: fit-content;
     margin: 10px 120px 10px 120px ;
     border-radius: 2vw;
     

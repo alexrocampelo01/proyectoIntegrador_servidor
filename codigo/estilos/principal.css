@@ -89,7 +89,7 @@
     background-color:#F3FFA5;
     float: left;
     width: 500px;
-    height: 205px;
+    height: fit-content;
     margin: 50px;
     border-radius: 2vw;
     /* padding: 0.5vw; */
@@ -147,18 +147,17 @@
 }
 /* COMIENZO grid de los datos*/
 
-
-.estrellas{
-    grid-template-columns:repeat(5, 5fr);
-    grid-template-rows:repeat(1, 1fr);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    /* background-color: rebeccapurple; */
+.valoracion a{
+    color: black;
 }
-.estrellas i{
-    width: 25px;
-    color: gold;
+.valoracion a:hover{
+    color: black;
+}
+.valoracion a:active{
+    color: black;
+}
+.valoracion a:visited{
+    color: black;
 }
 
 /* FIN grid de los datos*/

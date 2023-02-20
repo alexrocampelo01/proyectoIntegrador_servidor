@@ -101,9 +101,10 @@ function generarMiniRuta(data, nom, dif, dist){
         let puntos = JSON.parse(data[i].info);
         let lat = puntos[0][0];
         let lon = puntos[0][1];
-        let marker = L.marker([puntos[0][0], puntos[0][1]]).addTo(map);
+        let marker = L.marker([lat, lon]).addTo(map);
         //dibujamos la tuta
-        let polygon = L.polygon([puntos]).addTo(map);
+        // let polygon = L.polygon([puntos]).addTo(map);
+        var polyline = L.polyline(puntos, {color: 'red'}).addTo(map);
     
     }
 }

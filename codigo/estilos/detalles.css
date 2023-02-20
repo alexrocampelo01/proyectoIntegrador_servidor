@@ -82,7 +82,7 @@
     background-color:#F3FFA5;
     float: left;
     width: 535px;
-    height: 205px;
+    height: fit-content;
     margin: 10px 70px 10px 70px ;
     border-radius: 2vw;
     /* padding: 0.5vw; */
