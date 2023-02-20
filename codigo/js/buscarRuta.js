@@ -20,7 +20,7 @@ function obtenerRutas(){
         }
     })
     .then(data => {
-        console.log(data);
+        // console.log(data);
         rutas = data;
     
         generarMiniRuta(rutas);
@@ -42,11 +42,11 @@ function filtrar(){
 
 }
 function generarMiniRuta(data, nom, dif, dist){
-    console.log(data);
+    // console.log(data);
     let divRutas = document.querySelector('#otros');
     //generamos las minirutas
     let rutas = data;
-
+    console.log(nom, dif, dist);
     if (nom) rutas=rutas.filter( item => item.nombre.toLowerCase().includes(nom.toLowerCase().trim()));
     if (dif) rutas=rutas.filter( item => item.dificultad.toLowerCase().includes(dif.toLowerCase().trim()));
     if (dist) rutas=rutas.filter( item => item.distatancia > dist);
