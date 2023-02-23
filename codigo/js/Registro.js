@@ -30,7 +30,7 @@ function listaActividades(){
 let datosUsu ={};
 function recoger(){
     
-    if(comprovarErrores()){
+    if(!comprovarErrores()){
         console.log('erores');
         console.log(listaActividades());
         
@@ -79,6 +79,7 @@ function recoger(){
         })
         .then((data) =>{
             console.log("algo //"+data);
+            // location.href="../html/Principal.html";
         })
     }
 }
@@ -202,9 +203,9 @@ function comprovarErrores(){
     //lista de contenido
     
     document.querySelector('#errores').textContent=msg.toString();
+    console.log(error);
     if (!error){
         console.log("ok");
-        return true; 
     }
     return error;
 }

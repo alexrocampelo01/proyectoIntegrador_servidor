@@ -3,8 +3,8 @@ let stringActividades = "";
 let divErrores = document.querySelector('#errores');
 
 function cargarForm(){
-    let logUsu = document.querySelector('#logUsuBody');
-    logUsu.textContent = localStorage.getItem('nomUsu');
+    // let logUsu = document.querySelector('#logUsu');
+    // logUsu.textContent = localStorage.getItem('nomUsu');
     //================================================================
     //recojida de datos del formulario
     //================================================================
@@ -13,12 +13,12 @@ function cargarForm(){
     .then((data) => {
         console.log(`http://localhost/proyectoIntegrador/ProyectoSegundoTri/codigo/API/?id=${localStorage.getItem('id')}`);
         // console.log(data[0]);
-        document.querySelector('#nom').placeholder = `${data[0]['nombre']}`;
-        document.querySelector('#apel').placeholder = `${data[0]['apellido']}`;
-        document.querySelector('#correo').placeholder = `${data[0]['correo']}`;
-        document.querySelector('#altura').placeholder = `${data[0]['altura']}`;
-        document.querySelector('#peso').placeholder = `${data[0]['peso']}`;
-        document.querySelector('#tlf').placeholder = `${data[0]['tlf']}`;
+        document.querySelector('#nom').value = `${data[0]['nombre']}`;
+        document.querySelector('#apel').value = `${data[0]['apellido']}`;
+        document.querySelector('#correo').value = `${data[0]['correo']}`;
+        document.querySelector('#altura').value = `${data[0]['altura']}`;
+        document.querySelector('#peso').value = `${data[0]['peso']}`;
+        document.querySelector('#tlf').value = `${data[0]['tlf']}`;
         stringActividades = data[0]['listaActividades'];
         
     })
